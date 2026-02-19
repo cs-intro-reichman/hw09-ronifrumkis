@@ -99,8 +99,8 @@ public class LanguageModel {
         return initialText; 
     }
     StringBuilder generatedText = new StringBuilder(initialText);
-    String window = initialText.substring(initialText.length() - windowLength);
     while (generatedText.length() < textLength) {
+        String currentWindow = generatedText.substring(generatedText.length() - windowLength);
         List probs = CharDataMap.get(window);
         if (probs == null) {
             break; 
