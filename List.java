@@ -60,7 +60,7 @@ public class List {
         Node current = first;
         int index = 0;
         while (current !=null){
-            if (current.cp.chr == chr) {
+            if (current.cp.equals(chr)) {
                 return index;
         }
             current = current.next;
@@ -88,7 +88,7 @@ public class List {
         Node prev = null;
         Node current = first;
         while (current != null) {
-            if (current.cp.chr == chr){ 
+            if (current.cp.equals(chr)) {
                 if (prev == null){
                 first = first.next;
                 } else {
