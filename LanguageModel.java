@@ -99,7 +99,7 @@ public String generate(String initialText, int textLength) {
         }
         StringBuilder generatedText = new StringBuilder(initialText);
         while (generatedText.length() < textLength) {
-            String window = generatedText.substring(generatedText.length() - windowLength);
+            String window = generatedText.substring(generatedText.length() - windowLength, generatedText.length());
             List probs = CharDataMap.get(window);
             if (probs == null) {
                 break; 
