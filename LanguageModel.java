@@ -92,13 +92,12 @@ public class LanguageModel {
 	 * @param numberOfLetters - the size of text to generate
 	 * @return the generated text
 	 */
-
 public String generate(String initialText, int textLength) {
         if (initialText.length() < windowLength) {
             return initialText; 
         }
         StringBuilder generatedText = new StringBuilder(initialText);
-        while (generatedText.length() < textLength) {
+        while (generatedText.length() < initialText.length() + textLength) {
             String window = generatedText.substring(generatedText.length() - windowLength, generatedText.length());
             List probs = CharDataMap.get(window);
             if (probs == null) {
